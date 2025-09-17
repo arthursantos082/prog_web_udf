@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Pessoa</title>
     <style>
         body {
@@ -64,6 +65,10 @@
             from { opacity: 0; transform: scale(0.0); }
             to {opacity: 1; transform: scale(1.0); }            
         }
+        .botao-listagem{
+            margin-top: 10px    
+        }
+
     </style>
 </head>
 
@@ -81,9 +86,9 @@
         <!-- Pagina -->
         <form action="gravar.php" method="POST">
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" require />
+            <input type="text" id="nome" name="nome" required />
             <label for="idade">Idade:</label>
-            <input type="number" id="idade" name="idade" require />
+            <input type="number" id="idade" name="idade" required />
             <label for="estadoCivil">Estado Civil:</label>
             <select id="estadoCivil" name="estadoCivil">
                 <option value="">Selecione o Estado Civil</option>
@@ -91,10 +96,11 @@
                 <option value="S">Solteiro(a)</option>
             </select>    
             <button type="submit">Enviar</button>
-        </form>    
-    </div>
+        </form>
+        
+        <button class="botao-listagem" onclick="window.location.href='listagem.php'">Ver a Listagem</button>
 
-    <button onclick="window.location.href='listagem.php'">Ver a Listagem</button>
+    </div>
 
 </body>
 
