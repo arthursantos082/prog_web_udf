@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aula05</title>
+    <title>cadastro</title>
 </head>
 <body>
     
@@ -18,7 +18,7 @@
             <?php } ?>
         </div>
 
-        <form action="processa.php" method="POST">
+        <form action="gravar.php" method="POST">
             <label for="nome">Nome: </label>
             <input type="text" id="nome" name="nome" require />
             <label for="idade">Idade: </label>
@@ -30,6 +30,7 @@
                 <option value="S">Solteiro(a)</option>
             </select>
             <button type="submit">Enviar</button>
+            <button onclick="window.location.href='listagem.php'">Ver a Listagem</button>
         </form>
     </div>
 

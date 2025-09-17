@@ -5,16 +5,16 @@
         $estadoCivil = trim($_POST["estadoCivil"]);
 
         if (!empty($nome) && $idade > 0 && !empty($estadoCivil)) {
-            $linha = "Nome: $nome | Idade: $idade | Estado Civil: $estadoCivil";
+            $linha = "$nome;$idade;$estadoCivil";
             $arquivo = "./dados.txt";
             if (file_put_contents($arquivo, $linha, FILE_APPEND)) {
-                header("location: form.php?msg=Registro+Gravado&tipo=ok");
+                header("location: cadastro.php?msg=Registro+Gravado&tipo=ok");
                 exit;
             } else{
-                header("location: form.php?msg=Erro+Gravação+do+Arquivo&tipo=nok");
+                header("location: cadastro.php?msg=Erro+Gravação+do+Arquivo&tipo=nok");
             }
         } else {
-            header("location: form.php?msg=Tudo+Errado&tipo=nok");
+            header("location: cadastro.php?msg=Tudo+Errado&tipo=nok");
             exit;
         }
     }
